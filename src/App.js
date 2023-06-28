@@ -1,51 +1,35 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "./App.css";
+import './App.css';
 
-function App() {
-
-  // Logic
+function Translation() {
   const [inputText, setInputText] = useState('');
   const [translatedText, setTranslatedText] = useState('');
 
-  const sendRequest = async () => {
+  const translateText = async () => {
     try {
-
-      // Đang chờ API bên Backend hoàn thành
-      const response = await axios.post('YOUR_SEND_API_URL', { text: inputText });
-      const translationId = response.data.translationId;
-
-      // Gọi API callback để lấy kết quả dịch
-      getTranslationResult(translationId);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const getTranslationResult = async (translationId) => {
-    try {
-      const response = await axios.get(`YOUR_CALLBACK_API_URL/${translationId}`);
+      const response = await axios.post('http://localhost:5000/en-to-vi/?message=&fbclid=IwAR0dPUmLlPOiiR-azsp5PiRz1GvufcBkvXcd_xx--1nnE6RCyehuiMSvEws', { text: inputText });
       setTranslatedText(response.data.translation);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
-  //
+
   return (
     <>
       <div className="container">
         <div className="wrapper">
           <div className="text-input">
             <textarea
-              spellcheck="false"
+              spellCheck="false"
               className="from-text"
               placeholder="Enter text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             ></textarea>
             <textarea
-              spellcheck="false"
-              readonly
+              spellCheck="false"
+              readOnly
               disabled
               className="to-text"
               placeholder="Translation"
@@ -53,10 +37,10 @@ function App() {
             ></textarea>
           </div>
         </div>
-        <button onClick={sendRequest}>TRANSLATE</button>
+        <button onClick={translateText}>TRANSLATE</button>
       </div>
     </>
   );
 }
 
-export default App;
+export default Translation;
