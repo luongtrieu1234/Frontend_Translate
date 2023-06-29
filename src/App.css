@@ -16,6 +16,7 @@ body {
   background-position: center center;
 }
 .container {
+  position: relative;
   width: 900px;
   width: 100%;
   padding: 30px;
@@ -49,6 +50,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   border-radius: 5px;
+  color: black;
 }
 
 .text-input textarea::placeholder {
@@ -148,9 +150,11 @@ li,
 
 .change {
   margin-top: 25px;
-  margin-left: 155px;
+  margin-left: 385px;
+  position: absolute;
 }
 .button-change {
+  position: absolute;
   width: 40px;
   height: 30px;
   border: 2px solid #5a65c8;
@@ -165,7 +169,7 @@ li,
 
 .text-vietnamese {
   margin-top: 25px;
-  margin-left: 155px;
+  margin-left: 310px;
   font-size: 25px;
   color: #37298f;
 }
