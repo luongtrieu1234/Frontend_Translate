@@ -135,8 +135,43 @@ li,
   transform: scale(0.9);
 }
 
-.container button {
-  display: flex;
+.text-note {
+  display: inline-flex;
+}
+
+.text-english {
+  margin-top: 25px;
+  margin-left: 150px;
+  font-size: 25px;
+  color: #37298f;
+}
+
+.change {
+  margin-top: 25px;
+  margin-left: 155px;
+}
+.button-change {
+  width: 40px;
+  height: 30px;
+  border: 2px solid #5a65c8;
+  border-radius: 5px;
+  background-color: #9d92e0;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color: #37298f;
+  }
+}
+
+.text-vietnamese {
+  margin-top: 25px;
+  margin-left: 155px;
+  font-size: 25px;
+  color: #37298f;
+}
+
+.button-translate {
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -145,8 +180,12 @@ li,
   border: none;
   color: #fff;
   cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
   margin-top: 20px;
   font-size: 17px;
   border-radius: 5px;
-  background: #3a2d91;
+  background: #7c6eda;
+  &:hover {
+    background-color: #37298f;
+  }
 }
